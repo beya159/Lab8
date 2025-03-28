@@ -80,7 +80,14 @@ public class SalesItemTest
     }
 
     
+
+    @Test
+    public void addComment()
+    {
+        Comment comment1 = new Comment("lala", "momo", 7);
+    }
 }
+
 
 
 
