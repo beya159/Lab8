@@ -58,6 +58,15 @@ public class SalesItemTest
         SalesItem salesIte1 = new SalesItem("Java For Complete Idiots, Vol 2", 19900);
         assertEquals(false, salesIte1.addComment("Joshua Black", "Not worth the money. The font is too small.", -5));
     }
+    
+    public void testAddCommentSameAuthor()
+    {
+        SalesItem salesIte1 = new SalesItem("Brain surgery for Dummies", 21998);
+        assertEquals(true, salesIte1.addComment("James Duckling", "This book is great. I perform brain surgery every week now.", 4));
+        assertEquals(false, salesIte1.addComment("James Duckling", "This book is great. I perform brain surgery every week now.", 4));
+        assertEquals(1, salesIte1.getNumberOfComments());
+    }
+
 
     /**
      * Test that a sales item is correctly initialised (name and price).
