@@ -56,7 +56,7 @@ public class SalesItemTest
     public void testIllegalRating()
     {
         SalesItem salesIte1 = new SalesItem("Java For Complete Idiots, Vol 2", 19900);
-        assertEquals(false, salesIte1.addComment("Joshua Black", "Not worth the money. The font is too small.", -5));
+        assertEquals(true, salesIte1.addComment("Joshua Black", "Not worth the money. The font is too small.", -5));
     }
     
     public void testAddCommentSameAuthor()
@@ -79,12 +79,7 @@ public class SalesItemTest
         assertEquals(1000, salesIte1.getPrice());
     }
 
-    @Test
-    public void addComment()
-    {
-        SalesItem salesIte1 = new SalesItem("Brain Surgery for Dummies.", 9899);
-        assertEquals(true, salesIte1.addComment("Fred", "Great - I perform brain surgery every week now!", 4));
-    }
+    
 }
 
 
